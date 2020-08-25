@@ -63,15 +63,99 @@ namespace ConsoleApp1.MyDemo
 
     }
 
+
+    class DemoCar2
+    {
+        public int CurrentSpeed { get; set; }
+        public int MaxSpeed { get; set; }
+        public string PetName { get; set; }
+        private bool carIsDead = false;
+
+        public delegate void carHandler(string msg);
+        public event carHandler Exploded;
+        public event carHandler AboutToBlow;
+
+        public DemoCar2()
+        {
+            MaxSpeed = 100;
+        }
+        public DemoCar2(string name, int maxSp, int currentSp)
+        {
+            CurrentSpeed = currentSp;
+            MaxSpeed = maxSp;
+            PetName = name;
+        }
+
+        public void Accelerate(int delta)
+        {
+            if (carIsDead)
+            {
+                if (Exploded != null)
+                {
+                    Exploded("Sorry, this car is dead ...");
+                }
+            }
+            else
+            {
+                CurrentSpeed += delta;
+                if (10 == MaxSpeed - CurrentSpeed && AboutToBlow != null)
+                {
+                    AboutToBlow("Careful buddy ! Gonna blow!");
+                }
+            }
+
+            if (CurrentSpeed >= MaxSpeed)
+            {
+                carIsDead = true;
+            }
+            else
+            {
+                carIsDead = false;
+            }
+        }
+
+    }
+
+
+
     class DemoCar_Example
     {
+
         public void run()
+        {
+            runCar2();
+        }
+
+        public void runCar()
         {
             Console.WriteLine(" ******** {0} ******** ", "init");
 
             DemoCar car = new DemoCar("dodo", 100, 10);
             car.RegisterWithCarHandler(OnCarEvent);
             car.RegisterWithCarHandler(OnCarEvent2);
+
+            Console.WriteLine(" ******** {0} ******** ", "Accelerate");
+            for (int i = 0; i < 6; i++)
+            {
+
+                Console.WriteLine(" ******** 加速前 {0} ******** ", car.CurrentSpeed);
+                car.Accelerate(20);
+                Console.WriteLine(" ******** 加速後 {0} ******** ", car.CurrentSpeed);
+
+                Console.ReadLine();
+            }
+            Console.ReadKey();
+        }
+
+        public void runCar2()
+        {
+            Console.WriteLine(" ******** {0} ******** ", "init");
+
+            DemoCar2 car = new DemoCar2("dodo", 100, 10);
+            car.Exploded += OnCarEvent;
+            car.AboutToBlow += OnCarEvent2;
+            //car.RegisterWithCarHandler(OnCarEvent);
+            //car.RegisterWithCarHandler(OnCarEvent2);
 
             Console.WriteLine(" ******** {0} ******** ", "Accelerate");
             for (int i = 0; i < 6; i++)
