@@ -19,7 +19,9 @@ namespace WindowsFormsApp1
 
         private void helloWorldToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            myStatusLabel.Text = "Hello World !!";
+            Practices.Form1 frm = new Practices.Form1();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
