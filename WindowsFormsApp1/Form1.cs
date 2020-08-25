@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void helloWorldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            myStatusLabel.Text = "Hello World !!";
+        }
     }
 }
