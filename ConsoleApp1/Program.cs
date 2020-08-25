@@ -11,8 +11,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //runDemo001();
-            runDemoCar();
+            runDemo001();
+            //runDemoCar();
         }
 
         static void runDemo001()
