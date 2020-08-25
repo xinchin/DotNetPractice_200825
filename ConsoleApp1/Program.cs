@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ConsoleApp1
 {
@@ -10,8 +11,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(" ... Hello World ...");
-            Console.ReadKey();
+            runDemo001();
+        }
+        
+        static void runDemo001()
+        {
+            (new MyDemo.Demo001()).run();
         }
     }
 }

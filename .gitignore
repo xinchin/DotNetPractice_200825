@@ -1,4 +1,6 @@
 .vs/
-WindowsFormsApp1/obj/Debug/
-ConsoleApp1/obj/Debug/
-ConsoleApp1/obj/Release/
+WindowsFormsApp1/bin/
+WindowsFormsApp1/obj/
+ConsoleApp1/bin/
+ConsoleApp1/obj/
+
