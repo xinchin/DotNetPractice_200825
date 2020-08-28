@@ -19,10 +19,11 @@ namespace ConsoleApp1.MyDemo
         public void run()
         {
             //demoAsyncWork();
-            demoSyncWork();
+            //demoSyncWork();
+            //demoAction();
+            demoFunc();
             Console.ReadKey();
         }
-
 
         private int Add(int x, int y)
         {
@@ -31,7 +32,8 @@ namespace ConsoleApp1.MyDemo
             return x + y;
         }
 
-        private int Sum(int x, int y) {
+        private int Sum(int x, int y)
+        {
             Console.WriteLine("Sum() invoked on thread  {0}.", Thread.CurrentThread.ManagedThreadId);
             Thread.Sleep(3000);
             return x + y;
@@ -74,7 +76,7 @@ namespace ConsoleApp1.MyDemo
             Console.WriteLine("Main() invoked on thread {0}", Thread.CurrentThread.ManagedThreadId);
 
             IAsyncResult ar = b.BeginInvoke(10, 10, null, null);
-            
+
 
             Console.WriteLine("Doing more work in Main()");
 
@@ -87,6 +89,31 @@ namespace ConsoleApp1.MyDemo
         {
             Console.WriteLine(".......Say Hello again......");
         }
+
+        private void demoAction()
+        {
+            Action<string, int> actionTarget = new Action<string, int>(displayMsg);
+            actionTarget.Invoke("Hello----", 999);
+            //actionTarget.BeginInvoke("Hello----", 999,null,null);
+        }
+
+        private void demoFunc()
+        {
+            Func<int, int, int> b = new Func<int, int, int>(Add);
+            int answer = b(10, 10);
+            Console.WriteLine("========== {0} ===========", answer);
+        }
+
+        private void displayMsg(string msg, int count)
+        {
+            Console.WriteLine(" ++++++ {0} ++++++", "displayMsg start");
+            Console.WriteLine("thread id : {0}", Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine(" ###### {0} --- {1} ######", msg, count);
+            Console.WriteLine(" ++++++ {0} ++++++", "displayMsg end");
+        }
+
+
+
 
     }
 }
