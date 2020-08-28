@@ -24,5 +24,19 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Demo.Window1 win = new Demo.Window1();
+            win.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            win.ShowDialog();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            Demo.Window2 win = new Demo.Window2();
+            win.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            win.ShowDialog();
+        }
     }
 }
