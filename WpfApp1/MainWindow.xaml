@@ -11,6 +11,7 @@
             <MenuItem Header="Demo">
                 <MenuItem Header="PageDemo" Click="MenuItem_Click" />
                 <MenuItem Header="FrameDemo" Click="MenuItem_Click_1" />
+                <MenuItem Header="DialogDemo" Click="MenuItem_Click_2"/>
                 <Separator />
                 <MenuItem Header="Exit" />
             </MenuItem>
