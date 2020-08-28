@@ -43,6 +43,7 @@ namespace WpfApp1
         {
             Demo.Window3 win = new Demo.Window3();
             win.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            win.Owner = this;
             win.ShowDialog();
         }
     }
