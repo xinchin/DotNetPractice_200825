@@ -38,5 +38,13 @@ namespace WpfApp1
             win.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             win.ShowDialog();
         }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            Demo.Window3 win = new Demo.Window3();
+            win.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            win.Owner = this;
+            win.ShowDialog();
+        }
     }
 }
