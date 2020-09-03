@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHelper", "MyHelper\MyHelp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHelper.Tests", "MyHelper.Tests\MyHelper.Tests.csproj", "{995CA423-6675-4955-A830-D6010A8676A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L008", "L008\L008.csproj", "{1C344F1F-D06A-4966-8AB1-E94DBCCBE118}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{995CA423-6675-4955-A830-D6010A8676A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{995CA423-6675-4955-A830-D6010A8676A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{995CA423-6675-4955-A830-D6010A8676A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C344F1F-D06A-4966-8AB1-E94DBCCBE118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C344F1F-D06A-4966-8AB1-E94DBCCBE118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C344F1F-D06A-4966-8AB1-E94DBCCBE118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C344F1F-D06A-4966-8AB1-E94DBCCBE118}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
