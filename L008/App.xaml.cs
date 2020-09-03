@@ -13,5 +13,18 @@ namespace L008
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            var arg = e.Args;
+            if (arg.Contains("/window1"))
+            {
+                new Window1().Show();
+            }
+            else
+            {
+                new MainWindow().Show();
+            }
+        }
     }
 }
