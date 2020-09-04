@@ -42,3 +42,5 @@ GrpcService1/obj/GrpcService1.csproj.nuget.g.props
 GrpcService1/obj/GrpcService1.csproj.nuget.g.targets
 GrpcService1/obj/project.assets.json
 GrpcService1/obj/project.nuget.cache
+GrpcClient/obj/
+GrpcClient/bin/
